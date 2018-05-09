@@ -15,14 +15,13 @@ import com.wufei.model.User;
 import com.wufei.service.UserService;
 
 @Controller
-@RequestMapping("/user/*")
 public class UserController {
 	
 	@Resource(name = "userService")
 	private UserService userService;
 	private final String LIST = "redirect:/detail";
 	
-	@RequestMapping("/login")  
+	@RequestMapping(value="/login",method=RequestMethod.GET)  
     public ModelAndView login(@Valid User user,BindingResult result,HttpSession session) throws Exception{  
       if(!result.hasErrors()){  
         User loginUser=userService.login(user);  

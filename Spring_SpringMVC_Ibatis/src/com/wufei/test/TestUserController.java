@@ -20,7 +20,7 @@ public class TestUserController {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");  
         UserService userService = (UserService)context.getBean("userService");
         
-        User user = new User("xiaoming","222");
+        User user = new User("xiaosha","1234");
         try {
 			userService.addUser(user);
 		} catch (Exception e) {
